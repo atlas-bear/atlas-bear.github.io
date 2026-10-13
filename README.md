@@ -1,6 +1,6 @@
 # Library
 
-The one-page site at <https://atlas-bear.github.io/> that gathers AB//LABS' public resources: the [AI-Enhanced OSINT](https://github.com/atlas-bear/osint-ai-guide) guide, the [Maritime and Supply Chain OSINT Tools](https://github.com/atlas-bear/osint-tools) list, the [Recommended Reading](https://github.com/atlas-bear/recommended-reading) list, and the tools and platform we build.
+The one-page site at <https://library.ab-labs.io/> that gathers AB//LABS' public resources: the [AI-Enhanced OSINT](https://github.com/atlas-bear/osint-ai-guide) guide, the [Maritime and Supply Chain OSINT Tools](https://github.com/atlas-bear/osint-tools) list, the [Recommended Reading](https://github.com/atlas-bear/recommended-reading) list, and the tools and platform we build.
 
 ## How it is built
 
