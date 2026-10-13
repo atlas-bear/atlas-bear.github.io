@@ -1,4 +1,4 @@
-# The resources shown on the Atlas Bear Library page. scripts/build.py renders docs/index.md from this file.
+# The resources shown on the Library page. scripts/build.py renders docs/index.md from this file.
 # Each resource: title, one plain sentence, the main link (site), a repository, optional extra links, and the
 # GitHub repository used for the last-commit badge.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the Atlas Bear Library page from data/resources.yml.
+"""Render the Library page from data/resources.yml.
 
 Writes docs/index.md (the page, with one Quarto listing per group) and one
 docs/listing-<group>.yml per group (the cards, rendered by resource-card.ejs).
@@ -65,25 +65,28 @@ def page(groups):
     listings = "".join(
         f"  - id: {slug(g['title'])}\n    contents: listing-{slug(g['title'])}.yml\n    template: resource-card.ejs\n    sort: false\n"
         for g in groups)
-    out = ["---", 'title: "Atlas Bear Library"',
-           'description: "Public guides, lists and tools from Atlas Bear Labs, gathered on one page."',
+    out = ["---", 'title: "Library"',
+           'description: "Public guides, lists and tools from AB//LABS, gathered on one page."',
            "listing:", listings.rstrip("\n"), "toc: false", "---", "", HEADER.rstrip("\n"), "",
-           "Everything Atlas Bear Labs publishes in the open, on one page: a guide to using AI in intelligence work, "
+           "Everything [AB//LABS](https://ab-labs.io) publishes in the open, on one page: a guide to using AI in intelligence work, "
            "a verified list of maritime and supply chain OSINT tools, a cited reading list, and the tools and platform "
            "we build. Each card opens the resource; the repository link is where to propose changes.", ""]
     for g in groups:
         out += [f"## {g['title']}", "", f"::: {{#{slug(g['title'])}}}", ":::", ""]
     out += ["## Who we are", "",
-            "[Atlas Bear](https://atlasbear.co) provides intelligence advisory and operational support to organisations working in "
-            "difficult markets, with a focus on international trade, maritime security and supply chains. Atlas Bear Labs is where we "
-            "build and share tools, and the [Atlas Bear Academy](https://www.atlasbear.academy) is where we teach. Much of what is on "
-            "this page is used each year at the [Summer School on Illicit Trade](https://www.rug.nl/education/summer-winter-schools/illicit-trade).", "",
+            "[AB//LABS](https://ab-labs.io) provides intelligence and support across maritime, defence and logistics: vessel tracking "
+            "and port assessments, operational intelligence before and during deployments, threat and risk analysis, and advisory work "
+            "on building analytical capability. The tools and lists on this page come out of that work.", "",
+            "AB//LABS began as Atlas Bear Labs, the technical side of [Atlas Bear](https://atlasbear.co), and is now a company of its own. "
+            "The two still work together, and our repositories keep the `atlas-bear` name on GitHub for now. Atlas Bear's "
+            "[Academy](https://www.atlasbear.academy) runs the professional development programmes our people teach on, and much of what "
+            "is on this page is used each year at the [Summer School on Illicit Trade](https://www.rug.nl/education/summer-winter-schools/illicit-trade).", "",
             "## Contributing", "",
             "Every resource has an issue form for proposals and corrections, written criteria for what goes in, and a changelog. "
             "We sweep the guide and the lists twice a year, in spring and autumn, and release each sweep. Pull requests are welcome; "
             "the repositories explain the format. Please keep to our [community guidelines](https://github.com/atlas-bear/.github/blob/main/profile/COMMUNITY_GUIDELINES.md).", "",
             "## Contact", "",
-            "[support@atlasbear.co](mailto:support@atlasbear.co) for anything about these resources. "
+            "[support@ab-labs.io](mailto:support@ab-labs.io) for anything about these resources. "
             "[Waterline](https://maraiq.substack.com/) is our newsletter.", ""]
     return "\n".join(out)
 
