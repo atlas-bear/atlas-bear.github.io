@@ -1,30 +1,31 @@
 /*-- scss:defaults --*/
 
-// Dark counterpart of theme.scss: the same blue grey and indigo on a slate background.
-$primary: #90a4ae;
-$secondary: #7986cb;
-$link-color: #9fa8da;
-$link-hover-color: #c5cae9;
-$body-color: #cfd8dc;
-$body-bg: #1e272c;
-$headings-color: #eceff1;
-$navbar-bg: #37474f;
+// Material-like palette: blue grey header, indigo accents, soft neutrals.
+$primary: #546e7a;
+$secondary: #3f51b5;
+$link-color: #3f51b5;
+$link-hover-color: #283593;
+$body-color: #37474f;
+$body-bg: #ffffff;
+$headings-color: #263238;
+$navbar-bg: #546e7a;
 $navbar-fg: #ffffff;
 $navbar-hl: #ffffff;
-$sidebar-bg: #1e272c;
-$sidebar-fg: #b0bec5;
-$sidebar-hl: #9fa8da;
-$footer-bg: #263238;
-$footer-fg: #b0bec5;
-$code-bg: #263238;
-$code-color: #cfd8dc;
+$sidebar-bg: #ffffff;
+$sidebar-fg: #546e7a;
+$sidebar-hl: #3f51b5;
+$footer-bg: #eceff1;
+$footer-fg: #546e7a;
+$code-bg: #eceff1;
+$code-color: #37474f;
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-size-root: 16px;
-$toc-color: #9fa8da;
-$toc-active-border: #9fa8da;
+$toc-color: #3f51b5;
+$toc-active-border: #3f51b5;
 
 /*-- scss:rules --*/
 
+// Cap the page and the navbar at the same width and centre both, the way Material does.
 $atlas-max-width: 1220px;
 
 .navbar > .container-fluid,
@@ -46,13 +47,14 @@ $atlas-max-width: 1220px;
 }
 
 .navbar {
-  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.3), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
   font-weight: 600;
 }
 
+// Repo block in the navbar, filled in by repo-stats.js: repo name over release, stars and forks.
 .atlas-repo {
   display: flex;
   align-items: center;
@@ -117,6 +119,7 @@ $atlas-max-width: 1220px;
   }
 }
 
+// Content typography closer to Material's rhythm.
 .content {
   line-height: 1.6;
 }
@@ -129,7 +132,7 @@ $atlas-max-width: 1220px;
 .content h2 {
   font-weight: 400;
   margin-top: 2.5rem;
-  border-bottom: 1px solid #37474f;
+  border-bottom: 1px solid #eceff1;
   padding-bottom: 0.3rem;
 }
 
@@ -147,65 +150,33 @@ $atlas-max-width: 1220px;
 }
 
 blockquote {
-  border-left: 0.2rem solid #7986cb;
-  background: #263238;
+  border-left: 0.2rem solid #3f51b5;
+  background: #f5f7fa;
   padding: 0.6rem 1rem;
-  color: #cfd8dc;
+  color: #37474f;
 }
 
 .sidebar-navigation .sidebar-item-container .active {
   font-weight: 600;
 }
 
+// Listing cards on the Browse page.
 .quarto-grid-item .card-title {
   font-size: 1.05rem;
   line-height: 1.3;
 }
 
 .quarto-grid-item {
-  border-color: #37474f;
-}
-
-.quarto-category {
-  background: #37474f;
-  border-color: #37474f;
-  color: #cfd8dc;
-}
-
-.atlas-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0 2rem;
-}
-
-.atlas-card {
-  border: 1px solid #37474f;
-  border-radius: 0.3rem;
-  padding: 1rem 1.1rem;
-  background: #263238;
+  border-color: #eceff1;
   transition: box-shadow 0.2s;
 }
 
-.atlas-card:hover {
-  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.4);
+.quarto-grid-item:hover {
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.12);
 }
 
-.atlas-card__title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem;
-}
-
-.atlas-card__line {
-  margin-bottom: 0.6rem;
-}
-
-.atlas-card__links {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.atlas-card__badge {
-  margin: 0;
+.quarto-category {
+  background: #eceff1;
+  border-color: #eceff1;
+  color: #37474f;
 }
