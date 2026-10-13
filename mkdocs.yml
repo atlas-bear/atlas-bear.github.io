@@ -1,0 +1,71 @@
+site_name: Atlas Bear Library
+site_description: One page that gathers Atlas Bear Labs' public guides, lists and tools for intelligence work on illicit trade
+site_url: https://atlas-bear.github.io/
+repo_url: https://github.com/atlas-bear/atlas-bear.github.io
+repo_name: atlas-bear/atlas-bear.github.io
+edit_uri: ""
+copyright: Copyright &copy; 2024-2026 Atlas Bear. Page licensed MIT.
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+
+extra:
+  social:
+    - icon: material/github
+      link: https://github.com/atlas-bear
+      name: Atlas Bear Labs on GitHub
+    - icon: material/web
+      link: https://atlasbear.co
+      name: atlasbear.co
+    - icon: material/school
+      link: https://www.atlasbear.academy
+      name: Atlas Bear Academy
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+strict: true
