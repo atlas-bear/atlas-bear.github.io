@@ -4,7 +4,7 @@ The one-page site at <https://atlas-bear.github.io/> that gathers Atlas Bear Lab
 
 ## How it is built
 
-`data/resources.yml` lists the resources. `python scripts/build.py` renders `docs/index.md` from it, and [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) builds the page. GitHub Actions checks that the page matches the data, builds the site in strict mode, lints the Markdown and checks the links, and deploys on every push to `main`.
+`data/resources.yml` lists the resources. `python scripts/build.py` renders `docs/index.md` and one listing file per group from it, and [Quarto](https://quarto.org/) builds the page, drawing each card with `docs/resource-card.ejs`. GitHub Actions checks that the page matches the data, builds the site in strict mode, lints the Markdown and checks the links, and deploys on every push to `main`.
 
 To add or change a resource, edit `data/resources.yml`, run the script and open a pull request. The page itself is generated; please do not edit it by hand.
 

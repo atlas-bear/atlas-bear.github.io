@@ -1,86 +1,31 @@
 ---
-hide:
-  - navigation
-  - toc
+title: "Atlas Bear Library"
+description: "Public guides, lists and tools from Atlas Bear Labs, gathered on one page."
+listing:
+  - id: guides-and-lists
+    contents: listing-guides-and-lists.yml
+    template: resource-card.ejs
+    sort: false
+  - id: tools-and-platforms
+    contents: listing-tools-and-platforms.yml
+    template: resource-card.ejs
+    sort: false
+toc: false
 ---
 
 <!-- GENERATED FILE. Do not edit by hand. Edit data/resources.yml and run: python scripts/build.py -->
-
-# Atlas Bear Library
 
 Everything Atlas Bear Labs publishes in the open, on one page: a guide to using AI in intelligence work, a verified list of maritime and supply chain OSINT tools, a cited reading list, and the tools and platform we build. Each card opens the resource; the repository link is where to propose changes.
 
 ## Guides and lists
 
-<div class="grid cards" markdown>
-
-- **[AI-Enhanced OSINT](https://atlas-bear.github.io/osint-ai-guide/)**
-
-    ---
-
-    A practical guide to using AI in intelligence work on illicit trade, with the OPSEC rules that apply to every tool we list.
-
-    [Website](https://atlas-bear.github.io/osint-ai-guide/) · [Repository](https://github.com/atlas-bear/osint-ai-guide) · [Latest release](https://github.com/atlas-bear/osint-ai-guide/releases/latest) · [Cite (DOI)](https://doi.org/10.5281/zenodo.23314064)
-
-    ![Last commit](https://img.shields.io/github/last-commit/atlas-bear/osint-ai-guide)
-
-- **[Maritime and Supply Chain OSINT Tools](https://atlas-bear.github.io/osint-tools/)**
-
-    ---
-
-    The tools and data sources we use to track ships, cargo and trade, each verified, with who runs it and what it costs.
-
-    [Website](https://atlas-bear.github.io/osint-tools/) · [Repository](https://github.com/atlas-bear/osint-tools) · [tools.json](https://github.com/atlas-bear/osint-tools/blob/main/tools.json) · [Propose a tool](https://github.com/atlas-bear/osint-tools/issues/new/choose)
-
-    ![Last commit](https://img.shields.io/github/last-commit/atlas-bear/osint-tools)
-
-- **[Recommended Reading](https://atlas-bear.github.io/recommended-reading/)**
-
-    ---
-
-    Books, reports and papers for people working on illicit trade, with full citations and downloads for Zotero and BibTeX.
-
-    [Website](https://atlas-bear.github.io/recommended-reading/) · [Repository](https://github.com/atlas-bear/recommended-reading) · [BibTeX](https://github.com/atlas-bear/recommended-reading/blob/main/exports/reading-list.bib) · [CSL JSON](https://github.com/atlas-bear/recommended-reading/blob/main/exports/reading-list.json)
-
-    ![Last commit](https://img.shields.io/github/last-commit/atlas-bear/recommended-reading)
-
-</div>
+::: {#guides-and-lists}
+:::
 
 ## Tools and platforms
 
-<div class="grid cards" markdown>
-
-- **[MARA](https://maraiq.com/)**
-
-    ---
-
-    Our maritime security intelligence platform, with round-the-clock incident monitoring, alerts, reports and country and port indices.
-
-    [Website](https://maraiq.com/) · [Repository](https://github.com/atlas-bear/mara-roadmap) · [Roadmap and feedback](https://github.com/atlas-bear/mara-roadmap) · [Waterline newsletter](https://maraiq.substack.com/)
-
-    ![Last commit](https://img.shields.io/github/last-commit/atlas-bear/mara-roadmap)
-
-- **[equasis-cli](https://github.com/rhinonix/equasis-cli)**
-
-    ---
-
-    Look up vessels, inspections, ownership history and company fleets in Equasis from the command line, in batches.
-
-    [Repository](https://github.com/rhinonix/equasis-cli) · [PyPI](https://pypi.org/project/equasis-cli/)
-
-    ![Last commit](https://img.shields.io/github/last-commit/rhinonix/equasis-cli)
-
-- **[cue-kit](https://github.com/atlas-bear/cue-kit)**
-
-    ---
-
-    Turn a video into extracted frames and a timestamped transcript that a language model can read, with a Claude Code skill.
-
-    [Repository](https://github.com/atlas-bear/cue-kit) · [PyPI](https://pypi.org/project/cue-kit/)
-
-    ![Last commit](https://img.shields.io/github/last-commit/atlas-bear/cue-kit)
-
-</div>
+::: {#tools-and-platforms}
+:::
 
 ## Who we are
 
