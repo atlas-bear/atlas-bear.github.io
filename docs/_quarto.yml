@@ -6,8 +6,8 @@ project:
     - "*.qmd"
 
 website:
-  title: "Atlas Bear Library"
-  description: "One page that gathers Atlas Bear Labs' public guides, lists and tools for intelligence work on illicit trade."
+  title: "Library"
+  description: "One page that gathers AB//LABS' public guides, lists and tools for intelligence work on illicit trade."
   site-url: https://atlas-bear.github.io/
   repo-url: https://github.com/atlas-bear/atlas-bear.github.io
   repo-subdir: docs
@@ -23,19 +23,19 @@ website:
       - text: Who we are
         href: index.md#who-we-are
     right:
-      - text: atlasbear.co
+      - text: ab-labs.io
+        href: https://ab-labs.io
+      - text: Atlas Bear
         href: https://atlasbear.co
-      - text: Academy
-        href: https://www.atlasbear.academy
   page-footer:
-    left: "Copyright 2024-2026 Atlas Bear. Page licensed MIT; the resources carry their own licences."
+    left: "Copyright 2024-2026 AB//LABS (formerly Atlas Bear Labs). Page licensed MIT; the resources carry their own licences."
     right:
       - text: GitHub
         href: https://github.com/atlas-bear
       - text: Waterline
         href: https://maraiq.substack.com/
       - text: Contact
-        href: mailto:support@atlasbear.co
+        href: mailto:support@ab-labs.io
 
 format:
   atlas-bear/theme-html:
