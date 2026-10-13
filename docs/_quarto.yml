@@ -25,10 +25,10 @@ website:
     right:
       - text: ab-labs.io
         href: https://ab-labs.io
-      - text: Atlas Bear
+      - text: "Atlas|Bear"
         href: https://atlasbear.co
   page-footer:
-    left: "Copyright 2024-2026 AB//LABS (formerly Atlas Bear Labs). Page licensed MIT; the resources carry their own licences."
+    left: "Copyright 2024-2026 AB//LABS (formerly Atlas|Bear Labs). Page licensed MIT; the resources carry their own licences."
     right:
       - text: GitHub
         href: https://github.com/atlas-bear
