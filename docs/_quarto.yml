@@ -8,7 +8,7 @@ project:
 website:
   title: "Library"
   description: "One page that gathers AB//LABS' public guides, lists and tools for intelligence work on illicit trade."
-  site-url: https://atlas-bear.github.io/
+  site-url: https://library.ab-labs.io/
   repo-url: https://github.com/atlas-bear/atlas-bear.github.io
   repo-subdir: docs
   repo-actions: [issue]
