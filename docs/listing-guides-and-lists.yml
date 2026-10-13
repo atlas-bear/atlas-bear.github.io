@@ -1,0 +1,19 @@
+# GENERATED FILE. Do not edit by hand. Edit data/resources.yml and run: python scripts/build.py
+- title: AI-Enhanced OSINT
+  line: A practical guide to using AI in intelligence work on illicit trade, with the OPSEC rules that apply to every tool we list.
+  site: https://atlas-bear.github.io/osint-ai-guide/
+  repo: https://github.com/atlas-bear/osint-ai-guide
+  badge: atlas-bear/osint-ai-guide
+  links_html: <a href="https://atlas-bear.github.io/osint-ai-guide/">Website</a> · <a href="https://github.com/atlas-bear/osint-ai-guide">Repository</a> · <a href="https://github.com/atlas-bear/osint-ai-guide/releases/latest">Latest release</a> · <a href="https://doi.org/10.5281/zenodo.23314064">Cite (DOI)</a>
+- title: Maritime and Supply Chain OSINT Tools
+  line: The tools and data sources we use to track ships, cargo and trade, each verified, with who runs it and what it costs.
+  site: https://atlas-bear.github.io/osint-tools/
+  repo: https://github.com/atlas-bear/osint-tools
+  badge: atlas-bear/osint-tools
+  links_html: <a href="https://atlas-bear.github.io/osint-tools/">Website</a> · <a href="https://github.com/atlas-bear/osint-tools">Repository</a> · <a href="https://github.com/atlas-bear/osint-tools/blob/main/tools.json">tools.json</a> · <a href="https://github.com/atlas-bear/osint-tools/issues/new/choose">Propose a tool</a>
+- title: Recommended Reading
+  line: Books, reports and papers for people working on illicit trade, with full citations and downloads for Zotero and BibTeX.
+  site: https://atlas-bear.github.io/recommended-reading/
+  repo: https://github.com/atlas-bear/recommended-reading
+  badge: atlas-bear/recommended-reading
+  links_html: <a href="https://atlas-bear.github.io/recommended-reading/">Website</a> · <a href="https://github.com/atlas-bear/recommended-reading">Repository</a> · <a href="https://github.com/atlas-bear/recommended-reading/blob/main/exports/reading-list.bib">BibTeX</a> · <a href="https://github.com/atlas-bear/recommended-reading/blob/main/exports/reading-list.json">CSL JSON</a>

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Render docs/index.md, the one page of the Atlas Bear Library, from data/resources.yml.
+"""Render the Atlas Bear Library page from data/resources.yml.
 
-    python scripts/build.py          # rewrite docs/index.md
-    python scripts/build.py --check  # exit 1 if docs/index.md is out of date
+Writes docs/index.md (the page, with one Quarto listing per group) and one
+docs/listing-<group>.yml per group (the cards, rendered by resource-card.ejs).
+
+    python scripts/build.py          # rewrite the generated files
+    python scripts/build.py --check  # exit 1 if any generated file is out of date
 """
 import pathlib
 import re
@@ -12,7 +15,13 @@ import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "resources.yml"
-PAGE = ROOT / "docs" / "index.md"
+DOCS = ROOT / "docs"
+HEADER = "<!-- GENERATED FILE. Do not edit by hand. Edit data/resources.yml and run: python scripts/build.py -->\n\n"
+
+
+def slug(text):
+    s = re.sub(r"[^\w\s-]", "", text.strip().lower())
+    return re.sub(r"\s+", "-", s)
 
 
 def load():
@@ -36,29 +45,34 @@ def load():
     return groups
 
 
-def card(r):
-    links = [f"[Website]({r['site']})" if r["site"] != r["repo"] else None, f"[Repository]({r['repo']})"]
-    links += [f"[{l['label']}]({l['url']})" for l in r.get("links", [])]
-    links = " · ".join(x for x in links if x)
-    badge = f"![Last commit](https://img.shields.io/github/last-commit/{r['badge']})"
-    return (f"- **[{r['title']}]({r['site']})**\n\n"
-            f"    ---\n\n"
-            f"    {r['line']}\n\n"
-            f"    {links}\n\n"
-            f"    {badge}\n")
+def links_html(r):
+    links = []
+    if r["site"] != r["repo"]:
+        links.append(f'<a href="{r["site"]}">Website</a>')
+    links.append(f'<a href="{r["repo"]}">Repository</a>')
+    links += [f'<a href="{l["url"]}">{l["label"]}</a>' for l in r.get("links", [])]
+    return " · ".join(links)
 
 
-def render(groups):
-    out = ["---", "hide:", "  - navigation", "  - toc", "---", "",
-           "<!-- GENERATED FILE. Do not edit by hand. Edit data/resources.yml and run: python scripts/build.py -->", "",
-           "# Atlas Bear Library", "",
+def listing_yaml(group):
+    rows = [{"title": r["title"], "line": r["line"], "site": r["site"], "repo": r["repo"],
+             "badge": r["badge"], "links_html": links_html(r)} for r in group["resources"]]
+    return ("# GENERATED FILE. Do not edit by hand. Edit data/resources.yml and run: python scripts/build.py\n"
+            + yaml.safe_dump(rows, allow_unicode=True, sort_keys=False, width=1000))
+
+
+def page(groups):
+    listings = "".join(
+        f"  - id: {slug(g['title'])}\n    contents: listing-{slug(g['title'])}.yml\n    template: resource-card.ejs\n    sort: false\n"
+        for g in groups)
+    out = ["---", 'title: "Atlas Bear Library"',
+           'description: "Public guides, lists and tools from Atlas Bear Labs, gathered on one page."',
+           "listing:", listings.rstrip("\n"), "toc: false", "---", "", HEADER.rstrip("\n"), "",
            "Everything Atlas Bear Labs publishes in the open, on one page: a guide to using AI in intelligence work, "
            "a verified list of maritime and supply chain OSINT tools, a cited reading list, and the tools and platform "
            "we build. Each card opens the resource; the repository link is where to propose changes.", ""]
     for g in groups:
-        out += [f"## {g['title']}", "", '<div class="grid cards" markdown>', ""]
-        out += [card(r) for r in g["resources"]]
-        out += ["</div>", ""]
+        out += [f"## {g['title']}", "", f"::: {{#{slug(g['title'])}}}", ":::", ""]
     out += ["## Who we are", "",
             "[Atlas Bear](https://atlasbear.co) provides intelligence advisory and operational support to organisations working in "
             "difficult markets, with a focus on international trade, maritime security and supply chains. Atlas Bear Labs is where we "
@@ -74,19 +88,28 @@ def render(groups):
     return "\n".join(out)
 
 
+def outputs(groups):
+    files = {DOCS / "index.md": page(groups)}
+    for g in groups:
+        files[DOCS / f"listing-{slug(g['title'])}.yml"] = listing_yaml(g)
+    return files
+
+
 def main():
-    text = render(load())
+    files = outputs(load())
     if "--check" in sys.argv:
-        current = PAGE.open(encoding="utf-8", newline="").read() if PAGE.exists() else ""
-        if current != text:
-            print("docs/index.md is out of date. Run: python scripts/build.py", file=sys.stderr)
+        stale = [str(p.relative_to(ROOT)) for p, want in files.items()
+                 if not p.exists() or p.open(encoding="utf-8", newline="").read() != want]
+        if stale:
+            print(f"out of date: {', '.join(stale)}. Run: python scripts/build.py", file=sys.stderr)
             return 1
-        print("docs/index.md matches data/resources.yml")
+        print(f"generated files match data/resources.yml ({len(files)} files)")
         return 0
-    PAGE.parent.mkdir(parents=True, exist_ok=True)
-    with PAGE.open("w", encoding="utf-8", newline="") as fh:
-        fh.write(text)
-    print("wrote docs/index.md")
+    for p, want in files.items():
+        p.parent.mkdir(parents=True, exist_ok=True)
+        with p.open("w", encoding="utf-8", newline="") as fh:
+            fh.write(want)
+    print(f"wrote {len(files)} files")
     return 0
 
 

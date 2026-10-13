@@ -1,0 +1,19 @@
+# GENERATED FILE. Do not edit by hand. Edit data/resources.yml and run: python scripts/build.py
+- title: MARA
+  line: Our maritime security intelligence platform, with round-the-clock incident monitoring, alerts, reports and country and port indices.
+  site: https://maraiq.com/
+  repo: https://github.com/atlas-bear/mara-roadmap
+  badge: atlas-bear/mara-roadmap
+  links_html: <a href="https://maraiq.com/">Website</a> · <a href="https://github.com/atlas-bear/mara-roadmap">Repository</a> · <a href="https://github.com/atlas-bear/mara-roadmap">Roadmap and feedback</a> · <a href="https://maraiq.substack.com/">Waterline newsletter</a>
+- title: equasis-cli
+  line: Look up vessels, inspections, ownership history and company fleets in Equasis from the command line, in batches.
+  site: https://github.com/rhinonix/equasis-cli
+  repo: https://github.com/rhinonix/equasis-cli
+  badge: rhinonix/equasis-cli
+  links_html: <a href="https://github.com/rhinonix/equasis-cli">Repository</a> · <a href="https://pypi.org/project/equasis-cli/">PyPI</a>
+- title: cue-kit
+  line: Turn a video into extracted frames and a timestamped transcript that a language model can read, with a Claude Code skill.
+  site: https://github.com/atlas-bear/cue-kit
+  repo: https://github.com/atlas-bear/cue-kit
+  badge: atlas-bear/cue-kit
+  links_html: <a href="https://github.com/atlas-bear/cue-kit">Repository</a> · <a href="https://pypi.org/project/cue-kit/">PyPI</a>

@@ -1,0 +1,10 @@
+<div class="atlas-cards">
+<% for (const item of items) { %>
+<div class="atlas-card">
+<h3 class="atlas-card__title"><a href="<%= item.site %>"><%= item.title %></a></h3>
+<p class="atlas-card__line"><%= item.line %></p>
+<p class="atlas-card__links"><%= item.links_html %></p>
+<p class="atlas-card__badge"><img src="https://img.shields.io/github/last-commit/<%= item.badge %>" alt="Last commit"></p>
+</div>
+<% } %>
+</div>
