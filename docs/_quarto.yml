@@ -38,10 +38,7 @@ website:
         href: mailto:support@atlasbear.co
 
 format:
-  html:
-    theme:
-      light: [flatly, theme.scss]
-      dark: [darkly, theme-dark.scss]
+  atlas-bear/theme-html:
     include-after-body:
       text: '<script src="repo-stats.js" data-repo="atlas-bear/atlas-bear.github.io"></script>'
     grid:
@@ -50,6 +47,3 @@ format:
       margin-width: 0px
       gutter-width: 1.5rem
     toc: false
-    link-external-icon: false
-    link-external-newwindow: false
-    smooth-scroll: true
