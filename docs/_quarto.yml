@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - search-index.json
+    - minisearch.min.js
   render:
     - "*.md"
     - "*.qmd"
@@ -13,6 +16,7 @@ website:
   repo-subdir: docs
   repo-actions: [issue]
   favicon: favicon.svg
+  search: false
   image: social.png
   open-graph: true
   twitter-card:
@@ -44,7 +48,7 @@ website:
 format:
   atlas-bear/theme-html:
     include-after-body:
-      text: '<script src="repo-stats.js" data-repo="atlas-bear/atlas-bear.github.io"></script>'
+      text: '<script src="repo-stats.js" data-repo="atlas-bear/atlas-bear.github.io"></script><script src="library-search.js" data-source="library"></script>'
     grid:
       sidebar-width: 0px
       body-width: 1000px
