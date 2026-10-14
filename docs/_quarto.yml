@@ -48,7 +48,7 @@ website:
 format:
   atlas-bear/theme-html:
     include-after-body:
-      text: '<script src="repo-stats.js" data-repo="atlas-bear/atlas-bear.github.io"></script><script src="library-search.js" data-source="library"></script>'
+      text: '<script src="repo-stats.js" data-repo="atlas-bear/atlas-bear.github.io"></script><script src="minisearch.min.js"></script><script src="library-search.js" data-source="library"></script>'
     grid:
       sidebar-width: 0px
       body-width: 1000px
