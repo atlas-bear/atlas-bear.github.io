@@ -30,14 +30,13 @@ website:
         href: index.md#tools-and-platforms
       - text: Who we are
         href: index.md#who-we-are
+  page-footer:
+    left: "Copyright 2024-2026 AB//LABS (formerly Atlas|Bear Labs). Page licensed MIT; the resources carry their own licences."
     right:
       - text: ab-labs.io
         href: https://ab-labs.io
       - text: "Atlas|Bear"
         href: https://atlasbear.co
-  page-footer:
-    left: "Copyright 2024-2026 AB//LABS (formerly Atlas|Bear Labs). Page licensed MIT; the resources carry their own licences."
-    right:
       - text: GitHub
         href: https://github.com/atlas-bear
       - text: Waterline
